@@ -130,7 +130,7 @@ export default function Portfolio() {
 
       {/* Experience */}
       <section id="experience" className="about">
-        <h2>Experience</h2>
+        <h2 className="section-title">Experience</h2>
         <div className="experience-card">
           <h3>Full Stack Developer (Training)</h3>
           <p><em>Vector Skill Academy, Indore</em> <span className="duration">(Oct 2024 – Mar 2025)</span></p>
@@ -158,7 +158,7 @@ export default function Portfolio() {
 
       {/* Projects */}
       <section id="projects" className="projects">
-        <h2>Projects</h2>
+        <h2 className="section-title">Projects</h2>
         <div className="project-list">
           {projects.map((proj, i) => (
             <div key={i} className="project-card">
@@ -197,7 +197,7 @@ export default function Portfolio() {
 
       {/* Certifications */}
       <section id="certifications" className="bg-gray-100 py-10 px-5 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">🎓 Certifications
+        <h2 className="text-3xl font-bold text-gray-800 mb-4 section-title"> Certifications
         </h2>
         <p className="text-lg text-gray-600">
           <span className="font-semibold">Frontend Development Certification</span> – Vector Skill Academy
@@ -206,8 +206,8 @@ export default function Portfolio() {
 
       {/* Contact */}
       <section id="contact" className="bg-white py-12 px-5 text-center shadow-inner">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4"> Contact Me</h2>
-        <p className="text-lg text-gray-600 mb-6">Feel free to reach out via email!</p>
+        <h2 className="text-3xl font-bold text-gray-800 mb-4 section-title"> Contact Me</h2>
+        <p className="text-lg text-gray-600 mb-6 ">Feel free to reach out via email!</p>
         <a href="mailto:shubhamlowanshi02@gmail.com" className="glow-button">
           ✉️ Send Email
         </a>
