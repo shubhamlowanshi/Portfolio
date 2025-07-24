@@ -40,7 +40,7 @@ const projects = [
   },
   {
   title:"More project.....",
-  description: "Notes and question paper sharing app for RGPV students, built with React Native, Node.js, and MongoDB.",
+  description: "long with this, I have uploaded several other projects on my GitHub profile, demonstrating my experience with modern web technologies.cd",
     github: "https://github.com/shubhamlowanshi?tab=repositories",
   }
 ];
