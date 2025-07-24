@@ -524,6 +524,7 @@ body {
 }
 .glow-button {
   display: inline-block;
+ 
   padding: 10px 20px;
   background-color: #4f46e5;
   color: white;
@@ -536,4 +537,34 @@ body {
 .glow-button:hover {
   background-color: #4338ca;
   box-shadow: 0 0 20px #4338ca;
+}
+.typing-container {
+  position: relative;
+  top:8px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #4f46e5;
+  font-weight: bold;
+  font-size: 2.5rem;
+  animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite ;
+  /* color: #4f46e5;  */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #4f46e5;
+  }
 }

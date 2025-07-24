@@ -7,12 +7,13 @@ import {
   SiMongodb,
   SiExpress,
   SiNodedotjs,
+  SiJira,
+  SiJsonwebtokens,
+  SiGithub,
 } from "react-icons/si";
 import "./Portfolio.css";
 import dp from "./assets/pic.png";
-import { SiJira, SiJsonwebtokens, SiGithub } from "react-icons/si";
 import { useState } from "react";
-
 
 const techStack = [
   { icon: <SiReact />, name: "React.js" },
@@ -23,7 +24,7 @@ const techStack = [
   { icon: <SiMongodb />, name: "MongoDB" },
   { icon: <SiJira />, name: "Jira" },
   { icon: <SiJsonwebtokens />, name: "JWT" },
-  { icon: <SiGithub />, name: "GitHub" }
+  { icon: <SiGithub />, name: "GitHub" },
 ];
 
 const projects = [
@@ -41,56 +42,46 @@ const projects = [
   },
   {
     title: "More project.....",
-    description: "long with this, I have uploaded several other projects on my GitHub profile, demonstrating my experience with modern web technologies.cd",
+    description:
+      "long with this, I have uploaded several other projects on my GitHub profile, demonstrating my experience with modern web technologies.cd",
     github: "https://github.com/shubhamlowanshi?tab=repositories",
-  }
+  },
 ];
-const handleLinkClick = () => {
-  setMenuOpen(false);
-};
 
 export default function Portfolio() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     document.title = "Shubham Lowanshi | Portfolio";
   }, []);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null); // to track the nav menu
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleLinkClick = () => {
     setMenuOpen(false);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      // If clicked outside menu and toggle button
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target)
-      ) {
-        setMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    // Cleanup
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
   return (
     <div className="portfolio">
+      {/* Header */}
       <header className="header">
         <h1 className="brand-name">Shubham Lowanshi</h1>
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           &#9776;
         </button>
-
-        <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
+        <nav className={`nav-links ${menuOpen ? "show" : ""}`} ref={menuRef}>
           <a href="#home" onClick={handleLinkClick}>Home</a>
           <a href="#profile" onClick={handleLinkClick}>Profile</a>
           <a href="#experience" onClick={handleLinkClick}>Experience</a>
@@ -102,32 +93,21 @@ export default function Portfolio() {
         </nav>
       </header>
 
-
-
+      {/* Home Section */}
       <section id="home" className="home">
-        <h2>Hi, I'm Shubham Lowanshi</h2>
+        <h2>Hi, I'm <span className="typing-container">Shubham Lowanshi</span></h2>
         <p>Full Stack Developer | MERN | Razorpay | Responsive UI</p>
         <div className="socials">
-          <a
-            href="https://github.com/shubhamlowanshi"
-            target="_blank"
-            rel="noreferrer"
-            className="social-icon"
-          >
+          <a href="https://github.com/shubhamlowanshi" target="_blank" rel="noreferrer" className="social-icon">
             <FaGithub />
           </a>
-          <a
-            href="https://www.linkedin.com/in/shubham-lowanshi-438478338/"
-            target="_blank"
-            rel="noreferrer"
-            className="social-icon"
-          >
+          <a href="https://www.linkedin.com/in/shubham-lowanshi-438478338/" target="_blank" rel="noreferrer" className="social-icon">
             <FaLinkedin />
           </a>
         </div>
       </section>
 
-
+      {/* Profile */}
       <section id="profile" className="profile">
         <h2 className="section-title">Profile</h2>
         <div className="profile-content">
@@ -148,6 +128,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Experience */}
       <section id="experience" className="about">
         <h2>Experience</h2>
         <div className="experience-card">
@@ -163,7 +144,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-
+      {/* Skills */}
       <section id="about" className="about">
         <h2 className="section-title">Technical Skills</h2>
         <div className="tech-stack">
@@ -175,7 +156,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-
+      {/* Projects */}
       <section id="projects" className="projects">
         <h2>Projects</h2>
         <div className="project-list">
@@ -191,6 +172,7 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Education */}
       <section id="education" className="education">
         <h2 className="section-title">Education</h2>
         <div className="education-list">
@@ -213,34 +195,35 @@ export default function Portfolio() {
         </div>
       </section>
 
-
+      {/* Certifications */}
       <section id="certifications" className="bg-gray-100 py-10 px-5 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">🎓 Certifications</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">🎓 Certifications
+        </h2>
         <p className="text-lg text-gray-600">
           <span className="font-semibold">Frontend Development Certification</span> – Vector Skill Academy
         </p>
       </section>
 
+      {/* Contact */}
       <section id="contact" className="bg-white py-12 px-5 text-center shadow-inner">
         <h2 className="text-3xl font-bold text-gray-800 mb-4"> Contact Me</h2>
         <p className="text-lg text-gray-600 mb-6">Feel free to reach out via email!</p>
-        <a href="mailto:shubhamlowanshi02@gmail.com" class="glow-button">
+        <a href="mailto:shubhamlowanshi02@gmail.com" className="glow-button">
           ✉️ Send Email
         </a>
-        <br /><br />
-
+        <br />
+        <br />
         <a href="/Shubham_Lowanshi_m(1).pdf" download="Shubham_Lowanshi_Resume.pdf" className="glow-button">
           📄 Download Resume
         </a>
-
       </section>
 
+      {/* Footer */}
       <footer className="footer bg-gray-900 text-white text-center py-6 mt-10">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} <span className="font-semibold">Shubham Lowanshi</span>. All rights reserved.
         </p>
       </footer>
-
     </div>
   );
 }
