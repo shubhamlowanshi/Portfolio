@@ -39,8 +39,8 @@ const projects = [
     github: "https://github.com/shubhamlowanshi/readreuse",
   },
   {
-  title:"More project.....",
-  description: "long with this, I have uploaded several other projects on my GitHub profile, demonstrating my experience with modern web technologies.cd",
+    title: "More project.....",
+    description: "long with this, I have uploaded several other projects on my GitHub profile, demonstrating my experience with modern web technologies.cd",
     github: "https://github.com/shubhamlowanshi?tab=repositories",
   }
 ];
@@ -52,9 +52,12 @@ export default function Portfolio() {
 
   return (
     <div className="portfolio">
-      <header className="header">
-        <h1 className="brand-name">Shubham Lowanshi</h1>
-        <nav>
+      <header class="header">
+        <h1 class="brand-name">Shubham Lowanshi</h1>
+
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+
+        <nav class="nav-links" id="nav-links">
           <a href="#home">Home</a>
           <a href="#profile">Profile</a>
           <a href="#experience">Experience</a>
@@ -65,6 +68,7 @@ export default function Portfolio() {
           <a href="#contact">Contact</a>
         </nav>
       </header>
+
 
 
       <section id="home" className="home">
