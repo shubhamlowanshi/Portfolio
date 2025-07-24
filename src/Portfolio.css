@@ -522,3 +522,18 @@ body {
     opacity: 1;
   }
 }
+.glow-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 10px #4f46e5;
+  transition: all 0.3s ease-in-out;
+}
+.glow-button:hover {
+  background-color: #4338ca;
+  box-shadow: 0 0 20px #4338ca;
+}

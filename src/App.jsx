@@ -227,6 +227,11 @@ export default function Portfolio() {
         <a href="mailto:shubhamlowanshi02@gmail.com" class="glow-button">
           ✉️ Send Email
         </a>
+        <br /><br />
+
+        <a href="/Shubham_Lowanshi_m(1).pdf" download="Shubham_Lowanshi_Resume.pdf" className="glow-button">
+          📄 Download Resume
+        </a>
 
       </section>
 
