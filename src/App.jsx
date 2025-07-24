@@ -38,6 +38,11 @@ const projects = [
       "Notes and question paper sharing app for RGPV students, built with React Native, Node.js, and MongoDB.",
     github: "https://github.com/shubhamlowanshi/readreuse",
   },
+  {
+  title:"More project.....",
+  description: "Notes and question paper sharing app for RGPV students, built with React Native, Node.js, and MongoDB.",
+    github: "https://github.com/shubhamlowanshi?tab=repositories",
+  }
 ];
 
 export default function Portfolio() {
