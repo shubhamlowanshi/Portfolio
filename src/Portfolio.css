@@ -44,7 +44,6 @@ body {
 .home h2 {
     font-size: 3rem;
 }
-/* Base styles */
 .header {
   display: flex;
   justify-content: space-between;
@@ -86,7 +85,7 @@ body {
   cursor: pointer;
 }
 
-/* Responsive styles */
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -94,11 +93,11 @@ body {
     position: absolute;
     top: 60px;
     right: 20px;
-    background-color: #fff;
+    background-color: #141414;
     border: 1px solid #ccc;
     padding: 10px;
     width: 200px;
-    z-index: 10;
+    z-index: 100;
   }
 
   .nav-links.show {
@@ -107,6 +106,10 @@ body {
 
   .menu-toggle {
     display: block;
+    color: white;
+  }
+   .menu-toggle:hover {
+   color: pink;
   }
 }
 

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import {
   SiReact,
@@ -11,6 +11,7 @@ import {
 import "./Portfolio.css";
 import dp from "./assets/pic.png";
 import { SiJira, SiJsonwebtokens, SiGithub } from "react-icons/si";
+import { useState } from "react";
 
 
 const techStack = [
@@ -44,28 +45,60 @@ const projects = [
     github: "https://github.com/shubhamlowanshi?tab=repositories",
   }
 ];
+const handleLinkClick = () => {
+  setMenuOpen(false);
+};
 
 export default function Portfolio() {
+
   useEffect(() => {
     document.title = "Shubham Lowanshi | Portfolio";
   }, []);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null); // to track the nav menu
 
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // If clicked outside menu and toggle button
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
   return (
     <div className="portfolio">
-      <header class="header">
-        <h1 class="brand-name">Shubham Lowanshi</h1>
+      <header className="header">
+        <h1 className="brand-name">Shubham Lowanshi</h1>
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          &#9776;
+        </button>
 
-        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-
-        <nav class="nav-links" id="nav-links">
-          <a href="#home">Home</a>
-          <a href="#profile">Profile</a>
-          <a href="#experience">Experience</a>
-          <a href="#about">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#contact">Contact</a>
+        <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
+          <a href="#home" onClick={handleLinkClick}>Home</a>
+          <a href="#profile" onClick={handleLinkClick}>Profile</a>
+          <a href="#experience" onClick={handleLinkClick}>Experience</a>
+          <a href="#about" onClick={handleLinkClick}>Skills</a>
+          <a href="#projects" onClick={handleLinkClick}>Projects</a>
+          <a href="#education" onClick={handleLinkClick}>Education</a>
+          <a href="#certifications" onClick={handleLinkClick}>Certifications</a>
+          <a href="#contact" onClick={handleLinkClick}>Contact</a>
         </nav>
       </header>
 
