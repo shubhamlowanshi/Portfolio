@@ -96,7 +96,7 @@ export default function Portfolio() {
       {/* Home Section */}
       <section id="home" className="home">
         <h2>Hi, I'm <span className="typing-container">Shubham Lowanshi</span></h2>
-        <p>Full Stack Developer | MERN | Razorpay | Responsive UI</p>
+        <p>Full Stack Developer | MERN | Razorpay | Responsive UI |REACT |Express.js | jwt</p>
         <div className="socials">
           <a href="https://github.com/shubhamlowanshi" target="_blank" rel="noreferrer" className="social-icon">
             <FaGithub />
