@@ -12,7 +12,7 @@ import {
   SiGithub,
 } from "react-icons/si";
 import "./Portfolio.css";
-import dp from "./assets/pro.jpg";
+import dp from "./assets/pro.JPG";
 import { useState } from "react";
 
 const techStack = [
