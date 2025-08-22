@@ -130,10 +130,10 @@ export default function Portfolio() {
 
       {/* Experience */}
       <section id="experience" className="about">
-        <h2 className="section-title">Experience</h2>
+        <h2 className="section-title">Experience (Total 1 year)</h2>
         <div className="experience-card">
           <h3>Full Stack Developer (Training)</h3>
-          <p><em>Vector Skill Academy, Indore</em> <span className="duration">(Oct 2024 – Mar 2025)</span></p>
+          <p><em>Vected technology, Indore</em> <span className="duration">(Oct 2024 – Mar 2025)</span></p>
           <ul>
             <li>Built UIs using React with Hooks, Context API, Redux Toolkit.</li>
             <li>Developed RESTful APIs using Node.js & Express.js.</li>
@@ -141,7 +141,17 @@ export default function Portfolio() {
             <li>Implemented JWT and bcrypt for secure authentication.</li>
             <li>Collaborated in Agile teams using Git, GitHub & Jira.</li>
           </ul>
+          <h3>Full Stack Developer (traine)</h3>
+          <p><em>Intellihood Technology</em> <span className="duration">(Apr 2025 – present)</span></p>
+          <ul>
+            <li>Worked on multiple real-world tickets including bug fixes, new feature implementation, and performance improvements.</li>
+            <li>Integrated third-party libraries and APIs to enhance application functionality.</li>
+            <li>Gained hands-on experience with tools like Axios for API calls and Mongoose for database operations.</li>
+            <li>Implemented reusable React components and optimized rendering using React hooks.</li>
+            <li>Collaborated with team members through GitHub, managed tasks on Jira, and followed Agile workflow.</li>
+          </ul>
         </div>
+
       </section>
 
       {/* Skills */}
