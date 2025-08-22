@@ -14,6 +14,7 @@ import {
 import "./Portfolio.css";
 import dp from "./assets/pro.JPG";
 import { useState } from "react";
+import gsap from "gsap";
 
 const techStack = [
   { icon: <SiReact />, name: "React.js" },
@@ -72,6 +73,7 @@ export default function Portfolio() {
   const handleLinkClick = () => {
     setMenuOpen(false);
   };
+
 
   return (
     <div className="portfolio">

@@ -568,3 +568,45 @@ body {
     border-color: #4f46e5;
   }
 }
+/* Scrollbar base */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: #0f0f0f; /* dark track */
+  border-radius: 10px;
+}
+
+/* Scrollbar Thumb (jo move hota hai) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff0080, #7928ca, #2af598);
+  border-radius: 10px;
+  border: 2px solid #0f0f0f; /* thumb aur track ke beech gap effect */
+  transition: background 0.3s ease;
+}
+
+/* Hover pe aur bright */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2af598, #ff0080, #7928ca);
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7928ca #0f0f0f;
+}
