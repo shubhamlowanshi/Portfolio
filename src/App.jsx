@@ -77,7 +77,7 @@ export default function Portfolio() {
     <div className="portfolio">
       {/* Header */}
       <header className="header">
-        <h1 className="brand-name">Shubham Lowanshi</h1>
+        <h1 className="brand-name"> <a href="#">Shubham Lowanshi</a></h1>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           &#9776;
         </button>
@@ -226,6 +226,7 @@ export default function Portfolio() {
         <a href="/Shubham_Lowanshi_m(1).pdf" download="Shubham_Lowanshi_Resume.pdf" className="glow-button">
           📄 Download Resume
         </a>
+        <br />
       </section>
 
       {/* Footer */}
